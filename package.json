@@ -4,6 +4,10 @@
   "description": "学习react组件开发",
   "main": "index.js",
   "scripts": {
+    "dev": "dumi dev",
+    "build:site": "rimraf doc-site && dumi build",
+    "preview:site": "cross-env SITE_BUILD_ENV=PREVIEW npm run build:site && serve doc-site",
+    "deploy:site": "npm run build:site && gh-pages -d doc-site",
     "commit": "git-cz",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,12 +21,17 @@
     "@types/react-dom": "^18.3.0",
     "@umijs/fabric": "^4.0.1",
     "commitizen": "^4.3.0",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
+    "dumi": "^2.3.4",
+    "gh-pages": "^6.1.1",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "react": "^18.3.1",
+    "react-docgen-typescript": "^2.2.2",
     "react-dom": "^18.3.1",
+    "serve": "^14.2.3",
     "typescript": "^5.4.5"
   },
   "lint-staged": {
